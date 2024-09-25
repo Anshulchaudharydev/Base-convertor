@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Conversion</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.converter-container {
+    width: 400px;
+    padding: 30px;
+    background-color: #D2E0FB;
+    border: 2px dashed rgb(44, 114, 172);
+    border-radius: 10px;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.9);
+    text-align: center;
+}
+
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+.dropdowns {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+
+.base {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.base select {
+    width: 100px;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+
+button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #456e8d;
+}
+
+
+.output {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.output label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+#outputBox {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #201f1f;
+    border-radius: 5px;
+    background-color: #179fc9;
+}
+
+    </style>
+</head>
+<body>
+    <div class="converter-container">
+        <h1>Number Conversion</h1>
+        
+        <input type="text" id="numberInput" placeholder="Enter number">
+
+        <div class="dropdowns">
+            <div class="base">
+                <label for="fromBase">From</label>
+                <select id="fromBase">
+                    <option value="2">Binary</option>
+                    <option value="8">Octal</option>
+                    <option value="10">Decimal</option>
+                    <option value="16">Hexadecimal</option>
+                </select>
+            </div>
+
+            <div class="base">
+                <label for="toBase">To</label>
+                <select id="toBase">
+                    <option value="2">Binary</option>
+                    <option value="8">Octal</option>
+                    <option value="10">Decimal</option>
+                    <option value="16">Hexadecimal</option>
+                </select>
+            </div>
+        </div>
+
+        <button id="convertButton" onclick="convert()">Result</button>
+
+        <div class="output" id="output">
+            <label for="outputBox">output:</label>
+            <input type="text" id="outputBox" readonly>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
